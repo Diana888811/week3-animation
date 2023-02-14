@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+}
+
+.container {
+    width: 900px;
+    height: 900px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);          /*1fr = 1osa*/
+    grid-template-rows: 595px 300px;
+    gap: 5px;
+}
+
+.container > div {
+    width: 100%;
+    height: 100%;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.antonio {
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+
+.salma {
+    grid-column: 3/5;
+    grid-row: 1/2;
+}
+
+/*mobiili vaates kohandamine. Rakendub siis, kui ekraan on 568 või kitsam*/
+@media (max-width: 568px) {
+    body {
+        background-color: #000;
+    }
+
+    .container {
+        width: auto;
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas:
+        "antonio"
+        "salma"
+        "florence"
+        "harvey"
+        "olivia"
+        "wagner"
+        ;
+    }
+
+    .antonio {
+        grid-area: antonio;
+    }
+
+    .salma {
+        grid-area: salma;
+    }
+     .florence {
+        grid-area: florence;
+     }
+
+     .harvey {
+        grid-area: harvey;
+     }
+
+     .olivia {
+        grid-area: olivia;
+     }
+
+     .wagner {
+        grid-area: wagner;
+     }
+
+}
